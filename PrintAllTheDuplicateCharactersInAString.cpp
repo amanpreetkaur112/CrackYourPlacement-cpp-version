@@ -15,13 +15,15 @@ Explanation: e,g,k,and s are characters which are occured in string in more than
 
 /**
 Approach: Hashing
-Time Complexity:
-Space Complexity:
+Time Complexity: O(n)
+Space Complexity: O(1)
 **/
-
-
-/**
-Approach: Sorting
-Time Complexity:
-Space Complexity:
-**/
+void func(string& s) {
+    unordered_map<char,int> mp;
+    for(char c: s)
+        mp[c]++;
+    for(auto i: mp) {
+        if( i.second > 1 )
+            cout << i.first << " : " << i.second << endl;
+    }
+}
